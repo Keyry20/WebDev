@@ -1,0 +1,19 @@
+{
+  "name": "socialgamingnetwork-server",
+  "version": "0.0.1",
+  "description": "Social Network for video games",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "node": "^20.19.6"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
