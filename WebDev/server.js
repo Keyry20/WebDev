@@ -1,5 +1,8 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
+const session = require('express-session');
+
 const app = express();
 const port = 3000;
 
@@ -8,14 +11,15 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
+app.use('/bs', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 
 app.get('/', (req, res) => {
-    res.render('index.ejs', { username: '' });
+    res.render('login.ejs', { username: '' });
 });
 
-app.post('/login', (req, res) => {
+app.get('/user', (req, res) => {
     const { username } = req.body;
-    res.render('index.ejs', { username }); 
+    res.render('user.ejs', { username }); 
 });
 
 app.listen(port, () => {
